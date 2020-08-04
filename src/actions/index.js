@@ -5,4 +5,9 @@ export const addTodo = (content) => {
   }
 }
 
-export default addTodo
+export const deleteTodo = (index) => {
+  return {
+    type: 'DELETE_TODO',
+    todoID: index
+  }
+}

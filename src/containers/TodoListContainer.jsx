@@ -1,8 +1,15 @@
 import {connect} from 'react-redux'
 import TodoList from '../components/TodoList'
+import {addTodo, deleteTodo} from "../actions";
 
 const mapStateToProps = (state) => ({
   todoList: state.todoList
 })
 
-export default connect(mapStateToProps)(TodoList)
+const mapDispatchToProps = (dispatch) =>({
+  deleteTodo: (todoID) => {
+  dispatch(deleteTodo(todoID))
+}
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(TodoList)
