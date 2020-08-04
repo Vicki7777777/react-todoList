@@ -7,11 +7,8 @@ class TodoList extends React.Component {
     }
 
     deleteTodo = (index) => {
-
         this.props.deleteTodo(index)
-
     }
-
 
     render() {
         return (
