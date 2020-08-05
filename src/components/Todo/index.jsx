@@ -1,6 +1,10 @@
 import React from 'react';
 import './index.css'
-
+import {
+    DeleteOutlined
+} from '@ant-design/icons';
+import { Typography } from 'antd';
+const { Paragraph } = Typography;
 class Todo extends React.Component {
     constructor(props) {
         super(props)
@@ -11,10 +15,10 @@ class Todo extends React.Component {
     render() {
         return (
             <div  onClick={this.onClick} >
-                <span className={` ${this.props.status?"todoDone":"todo"}`}>
-                {this.props.content}
-                </span>
-                <button onClick={this.delete}>X</button>
+                <Paragraph editable={{ onChange: this.onChange }}  className={` ${this.props.status?"todoDone":"todo"}`}>
+                        {this.props.content}
+                </Paragraph>
+                <button onClick={this.delete}><DeleteOutlined /></button>
             </div>
         )
     }
@@ -33,6 +37,9 @@ class Todo extends React.Component {
         event.stopPropagation()
     }
 
+    onChange = str => {
+        this.setState({ str });
+    };
 
 }
 

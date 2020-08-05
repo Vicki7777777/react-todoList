@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Button, Radio } from 'antd';
 class TodoForm extends React.Component {
   constructor(props) {
     super(props)
@@ -13,7 +13,7 @@ class TodoForm extends React.Component {
     return (
       <div>
         <input type="text" onChange={this.onChange}/>
-        <button onClick={this.onSubmit}>add</button>
+        <Button onClick={this.onSubmit}>add</Button>
       </div>
     )
   }
