@@ -1,10 +1,13 @@
 import {connect} from 'react-redux'
 import TodoForm from '../components/TodoForm'
-import {addTodo} from '../actions'
+import {updateTodo} from "../api/api";
+import {addTodo} from '../actions';
 
 const mapDispatchToProps = (dispatch) => ({
   addTodo: (content,status) => {
-    dispatch(addTodo(content,status))
+    updateTodo(content,status).then(res=>{
+      dispatch(addTodo(res.data,status))
+    })
   }
 })
 
