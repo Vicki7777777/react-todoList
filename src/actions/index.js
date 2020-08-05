@@ -14,22 +14,21 @@ export const deleteTodo = (index) => {
 }
 
 
-export const doneTodo = (status,index) => {
+export const doneTodo = (status,id) => {
   return {
     type: 'DONE_TODO',
     status: status,
-    index: index
+    id: id
   }
 }
 
 
-export const editTodo = (content,index) => {
-  return {
-    type: 'EDIT_TODO',
-    content: content,
-    index: index
-  }
-}
+// export const editTodo = (content） => {
+//   return {
+//     type: 'EDIT_TODO',
+//     content: content
+//   }
+// }
 
 
 export const initTodo = (todos) =>{

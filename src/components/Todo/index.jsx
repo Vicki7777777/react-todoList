@@ -4,7 +4,6 @@ import {
     DeleteOutlined
 } from '@ant-design/icons';
 import { Typography } from 'antd';
-import index from "../../reducers";
 const { Paragraph } = Typography;
 class Todo extends React.Component {
     constructor(props) {
@@ -30,19 +29,15 @@ class Todo extends React.Component {
         this.props.doneTodo(this.props.status,this.props.index)
     }
 
-    dropTodo = () => {
-        this.props.deleteTodo(this.props.index)
-    }
-
     delete = (event) => {
-        this.dropTodo()
+        this.props.deleteTodo(this.props.index)
         event.stopPropagation()
     }
 
-    onChange = (event,index) => {
-        this.setState({ str: event });
-        this.props.editTodo(this.state.str,index)
-    }
+    // onChange = (event,index) => {
+    //     this.setState({ str: event });
+    //     this.props.editTodo(this.state.str,index)
+    // }
 
 }
 

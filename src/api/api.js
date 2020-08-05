@@ -7,5 +7,5 @@ const todoApi = axios.create({
 
 export const getAllTodos = () => todoApi.get('/todos');
 
-export const deleteTodo = (id) => todoApi.delete('/todos/'+id)
+export const dropTodo = (id) => todoApi.delete('/todos/'+id)
 

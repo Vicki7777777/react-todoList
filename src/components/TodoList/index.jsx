@@ -25,7 +25,7 @@ class TodoList extends React.Component {
         return (
             <div>
                 <h3>Todo List</h3>
-                {this.props.todoList.map((item) => {
+                {this.props.todoList.map((item,index) => {
                     console.log("is statue?",item.status)
                     return <Todo key={item.id}
                           index={item.id}

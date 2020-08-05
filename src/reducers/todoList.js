@@ -1,5 +1,5 @@
 const todoList = (state = [], action) => {
-
+  console.log(!action.status)
   switch (action.type) {
     case 'ADD_TODO':
       return [...state, {
@@ -10,7 +10,7 @@ const todoList = (state = [], action) => {
       return state.filter((item) => item.id !== action.todoID )
 
     case 'DONE_TODO':
-      state[action.index].status= !action.status
+      state[action.id].status= !action.status
       return [...state]
 
     case 'EDIT_TODO':
