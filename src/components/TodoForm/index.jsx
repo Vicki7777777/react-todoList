@@ -4,7 +4,8 @@ class TodoForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      content: ''
+      content: '',
+      status: false
     }
   }
 
@@ -18,7 +19,7 @@ class TodoForm extends React.Component {
   }
 
   onSubmit = () => {
-    this.props.addTodo(this.state.content)
+    this.props.addTodo(this.state.content,this.state.status)
   }
 
   onChange = (event) => {

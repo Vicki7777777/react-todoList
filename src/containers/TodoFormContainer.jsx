@@ -3,8 +3,8 @@ import TodoForm from '../components/TodoForm'
 import {addTodo} from '../actions'
 
 const mapDispatchToProps = (dispatch) => ({
-  addTodo: (content) => {
-    dispatch(addTodo(content))
+  addTodo: (content,status) => {
+    dispatch(addTodo(content,status))
   }
 })
 
