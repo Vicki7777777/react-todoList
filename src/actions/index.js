@@ -14,11 +14,11 @@ export const deleteTodo = (index) => {
 }
 
 
-export const doneTodo = (status,id) => {
+export const doneTodo = (id,status) => {
   return {
     type: 'DONE_TODO',
-    status: status,
-    id: id
+    id: id,
+    status: status
   }
 }
 

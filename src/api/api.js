@@ -14,8 +14,5 @@ export const updateTodo = (content,status) =>todoApi.post('/todos/',{
     status: status
 })
 
-// export const putTodo = (content,status) => todoApi.put('/todos/',{
-//     content: content,
-//     status: status
-// })
+export const putTodo = (id,status)=> todoApi.put('/todos/'+id,{status: status})
 

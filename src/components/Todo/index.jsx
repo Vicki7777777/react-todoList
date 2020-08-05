@@ -26,7 +26,7 @@ class Todo extends React.Component {
 
     onClick = (event) => {
         event.stopPropagation()
-        this.props.doneTodo(this.props.status,this.props.index)
+        this.props.doneTodo(this.props.index,this.props.status)
     }
 
     delete = (event) => {

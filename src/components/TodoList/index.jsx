@@ -11,8 +11,10 @@ class TodoList extends React.Component {
         this.props.deleteTodo(index)
     }
 
-    doneTodo = (status,index) => {
-        this.props.doneTodo(status,index)
+    doneTodo = (id,status) => {
+        status =! status
+        this.props.doneTodo(id,status)
+        console.log('test',status)
     }
 
     componentDidMount() {
@@ -26,8 +28,8 @@ class TodoList extends React.Component {
             <div>
                 <h3>Todo List</h3>
                 {this.props.todoList.map((item,index) => {
-                    console.log("is statue?",item.status)
                     return <Todo key={item.id}
+                                 todoList={item}
                           index={item.id}
                           status={item.status}
                           doneTodo={this.doneTodo}
