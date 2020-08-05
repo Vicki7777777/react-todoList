@@ -7,13 +7,18 @@ const todoList = (state = [], action) => {
         status: action.status
       }]
     case 'DELETE_TODO':
-      state.splice(action.todoID,1)
-          return [...state]
+      return state.filter((item) => item.id !== action.todoID )
 
     case 'DONE_TODO':
       state[action.index].status= !action.status
       return [...state]
 
+    case 'EDIT_TODO':
+      state[action.index].content= !action.content
+      return [...state]
+
+    case 'INIT_TODO':
+      return  action.todos
     default:
       return state
   }

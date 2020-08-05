@@ -4,20 +4,22 @@ import {
     DeleteOutlined
 } from '@ant-design/icons';
 import { Typography } from 'antd';
+import index from "../../reducers";
 const { Paragraph } = Typography;
 class Todo extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            str: null
         }
     }
 
     render() {
         return (
             <div  onClick={this.onClick} >
-                <Paragraph editable={{ onChange: this.onChange }}  className={` ${this.props.status?"todoDone":"todo"}`}>
+                <span  className={` ${this.props.status?"todoDone":"todo"}`}>
                         {this.props.content}
-                </Paragraph>
+                </span>
                 <button onClick={this.delete}><DeleteOutlined /></button>
             </div>
         )
@@ -37,9 +39,10 @@ class Todo extends React.Component {
         event.stopPropagation()
     }
 
-    onChange = str => {
-        this.setState({ str });
-    };
+    onChange = (event,index) => {
+        this.setState({ str: event });
+        this.props.editTodo(this.state.str,index)
+    }
 
 }
 

@@ -9,7 +9,9 @@ import {
     Link
 } from 'react-router-dom';
 import TodoDoneContainer from "./containers/TodoDoneContainer";
+import { Layout } from 'antd';
 
+const { Header, Footer, Sider, Content } = Layout;
 //import Switch from "antd";
 
 // function App() {
@@ -26,16 +28,21 @@ import TodoDoneContainer from "./containers/TodoDoneContainer";
 
 function App() {
     return (
+        <Layout>
+            <Header>
         <Router>
+
             <div>
                 <ul>
-                    <li><Link to="/">ToDoHome</Link></li>
+                    <li ><Link to="/">ToDoHome</Link></li>
                     <li><Link to="/undone">ToDoDone</Link></li>
                 </ul>
                 <Switch>
                     <Route exact path="/">
-                        <TodoListContainer/>
+                        <header>
+                             <TodoListContainer/>
                         <TodoFormContainer/>
+                        </header>
                     </Route>
                     <Route path="/undone">
                         <TodoDoneContainer/>
@@ -43,6 +50,8 @@ function App() {
                 </Switch>
             </div>
         </Router>
+            </Header>
+        </Layout>
         // <div className="App">
         //     <header className="App-header">
         //         <TodoListContainer />

@@ -1,5 +1,6 @@
 import React from 'react'
 import Todo from '../Todo'
+import {getAllTodos} from "../../api/api";
 
 class TodoList extends React.Component {
     constructor(props) {
@@ -14,14 +15,20 @@ class TodoList extends React.Component {
         this.props.doneTodo(status,index)
     }
 
+    componentDidMount() {
+        getAllTodos().then( response =>{
+            this.props.initTodo(response.data)
+        })
+    }
+
     render() {
         return (
             <div>
                 <h3>Todo List</h3>
-                {this.props.todoList.map((item, index) => {
+                {this.props.todoList.map((item) => {
                     console.log("is statue?",item.status)
-                    return <Todo key={index}
-                          index={index}
+                    return <Todo key={item.id}
+                          index={item.id}
                           status={item.status}
                           doneTodo={this.doneTodo}
                           deleteTodo={this.deleteTodo}
