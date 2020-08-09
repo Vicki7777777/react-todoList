@@ -1,5 +1,4 @@
 const todoList = (state = [], action) => {
-    console.log(!action.status)
     switch (action.type) {
         case 'ADD_TODO':
             return [...state, action.content]
@@ -12,11 +11,6 @@ const todoList = (state = [], action) => {
                 data.status = action.status
             }
             return [...state]
-
-
-        // case 'EDIT_TODO':
-        //   state[action.index].content= !action.content
-        //   return [...state]
 
         case 'INIT_TODO':
             return action.todos

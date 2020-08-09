@@ -23,14 +23,6 @@ export const doneTodo = (id,status) => {
 }
 
 
-// export const editTodo = (content） => {
-//   return {
-//     type: 'EDIT_TODO',
-//     content: content
-//   }
-// }
-
-
 export const initTodo = (todos) =>{
   return {
     type: 'INIT_TODO',

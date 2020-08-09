@@ -18,9 +18,6 @@ const mapDispatchToProps = (dispatch) => ({
             dispatch(doneTodo(id,status))
         })
     },
-    // editTodo: (content,index) => {
-    //   dispatch(editTodo(content,index))
-    // },
     initTodo: (todos) => {
         dispatch(initTodo(todos))
     }

@@ -14,7 +14,7 @@ class TodoList extends React.Component {
     doneTodo = (id,status) => {
         status =! status
         this.props.doneTodo(id,status)
-        console.log('test',status)
+        console.log("todoList",id)
     }
 
     componentDidMount() {

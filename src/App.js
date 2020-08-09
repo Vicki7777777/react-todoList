@@ -28,11 +28,9 @@ const { Header, Footer, Sider, Content } = Layout;
 
 function App() {
     return (
-        <Layout>
-            <Header>
         <Router>
-
-            <div>
+            <div className="App">
+                <header className="App-header">
                 <ul>
                     <li ><Link to="/">ToDoHome</Link></li>
                     <li><Link to="/undone">ToDoDone</Link></li>
@@ -48,10 +46,9 @@ function App() {
                         <TodoDoneContainer/>
                     </Route>
                 </Switch>
+                </header>
             </div>
         </Router>
-            </Header>
-        </Layout>
         // <div className="App">
         //     <header className="App-header">
         //         <TodoListContainer />
